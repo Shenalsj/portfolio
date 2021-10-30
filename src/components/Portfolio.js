@@ -1,6 +1,6 @@
 import React from "react";
 import websitebuilder from "../images/websitebuilder.png";
-// import cityGuide from "../images/city-guide-app.png";
+import Crypto from "../images/cryptoapp.png";
 // import portfolio from "../images/portfolio.png";
 // import taskManager from "../images/task-manager.png";
 // FONTAWESOME IMPORTS
@@ -26,6 +26,14 @@ const Pofrfolio = () => {
       </>
     )
     PopupboxManager.open({ content })
+    PopupboxManager.update({
+      content,
+      config:{
+        titleBar:{
+          text:"Website Builder",
+        },
+      },
+    })
   }
 
   const popupboxConfigwebsitebuilder = {
@@ -38,28 +46,36 @@ const Pofrfolio = () => {
   }
 
   // City Guide App
-  // const openPopupboxCityGuide = () => {
-  //   const content = (
-  //     <>
-  //       <img className="portfolio-image-popupbox" src={cityGuide} alt="City Guide App Project..." />
-  //       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex cumque illo est expedita quos adipisci suscipit unde itaque qui perferendis.</p>
+  const openPopupboxCrypto = () => {
+    const content = (
+      <>
+        <img className="portfolio-image-popupbox" src={Crypto} alt="Crypto App Project..." />
+        <p>A crypto currency app.</p>
 
-  //       <b>Demo:</b> <a className="hyper-link" onClick={() => window.open("https://city-guide-app-project.herokuapp.com/", "_blank")}>https://city-guide-app-project.herokuapp.com/</a>
-  //       <br />
-  //       <b>GitHub:</b> <a className="hyper-link" onClick={() => window.open("https://github.com/8020Coding/city-guide-app", "_blank")}>https://github.com/8020Coding/city-guide-app</a>
-  //     </>
-  //   )
-  //   PopupboxManager.open({ content })
-  // }
+        <b>Demo:</b> <a className="hyper-link" onClick={() => window.open("https://sjcryptoapp.netlify.app/", "_blank")}>https://sjcryptoapp.netlify.app/</a>
+        <br />
+        <b>GitHub:</b> <a className="hyper-link" onClick={() => window.open("https://github.com/Shenalsj/crypto_app", "_blank")}>https://github.com/Shenalsj/crypto_app</a>
+      </>
+    )
+    PopupboxManager.open({ content })
+    PopupboxManager.update({
+      content,
+      config:{
+        titleBar:{
+          text:"Crypto App",
+        },
+      },
+    })
+  }
 
-  // const popupboxConfigCityGuide = {
-  //   titleBar: {
-  //     enable: true,
-  //     text: "City Guide App project."
-  //   },
-  //   fadeIn: true,
-  //   fadeInSpeed: 500
-  // }
+  const popupboxConfigCrypto = {
+    titleBar: {
+      enable: true,
+      text: "Crypto App project."
+    },
+    fadeIn: true,
+    fadeInSpeed: 500
+  }
 
   // Portfolio Project
   // const openPopupboxPortfolio = () => {
@@ -119,11 +135,12 @@ const Pofrfolio = () => {
             <FontAwesomeIcon className="portfolio-icon" icon={faSearchPlus} />
           </div>
           {/* - */}
-          {/* <div className="portfolio-image-box" onClick={openPopupboxCityGuide}>
-            <img className="portfolio-image" src={cityGuide} alt="City Guide Project..." />
+          <div className="portfolio-image-box" onClick={openPopupboxCrypto}>
+            <img className="portfolio-image" src={Crypto} alt="Crypto Project..." />
             <div className="overflow"></div>
             <FontAwesomeIcon className="portfolio-icon" icon={faSearchPlus} />
-          </div> */}
+            
+          </div>
           {/* - */}
           {/* <div className="portfolio-image-box" onClick={openPopupboxPortfolio}>
             <img className="portfolio-image" src={portfolio} alt="Portfolio React and Material UI Project..." />
@@ -139,7 +156,7 @@ const Pofrfolio = () => {
         </div>
       </div>
       <PopupboxContainer {...popupboxConfigwebsitebuilder} />
-       {/* <PopupboxContainer {...popupboxConfigCityGuide} /> */}
+       <PopupboxContainer {...popupboxConfigCrypto} />
       {/* <PopupboxContainer {...popupboxConfigPortfolio} />
       <PopupboxContainer {...popupboxConfigTaskManager} /> */}
     </div>
